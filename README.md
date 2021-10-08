@@ -2,7 +2,7 @@
 
 Evaluates some code on all lines of the input
 
-e.g. `ls -l | ruby-each-line "puts l.split[4]" | ruby-all-lines "puts lines.map(&:to_i).sum"`
+e.g. `ls -l | dorian-each "puts l.split[4]" | dorian-all "puts lines.map(&:to_i).sum"`
 
 ### Install
 
@@ -21,8 +21,8 @@ gem install dorian
 From my history:
 
 ```bash
-pbpaste | ruby-all-lines "puts lines.map(&:strip).join(', ')"
-printf 'Clément\nDorian\nMadiha\nRémi\nRayane\nMélanie\nJade' | ruby-all-lines "puts lines.sample"
-pbpaste | grep '*' | ruby-each-line "puts '\"' + line.split[1] + '\"'" | ruby-all-lines "puts lines.map(&:strip).join(', ')"
-cat a.txt | grep -v NEW | ruby-all-lines "puts lines.map(&:strip).each_slice(2).map { |l| l.join(' '))"
+pbpaste | dorian-all "puts lines.map(&:strip).join(', ')"
+printf 'Clément\nDorian\nMadiha\nRémi\nRayane\nMélanie\nJade' | dorian-all "puts lines.sample"
+pbpaste | grep '*' | dorian-each "puts '\"' + line.split[1] + '\"'" | dorian-all "puts lines.map(&:strip).join(', ')"
+cat a.txt | grep -v NEW | dorian-all "puts lines.map(&:strip).each_slice(2).map { |l| l.join(' '))"
 ```
