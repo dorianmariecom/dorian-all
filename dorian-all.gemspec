@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "dorian-all"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
   s.summary = "Evaluates some code on all lines of the input"
   s.description = 'e.g. `ls -l | dorian-each "puts l.split[4]" | dorian-all "puts lines.map(&:to_i).sum"`'
   s.authors = ["Dorian Marié"]
