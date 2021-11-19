@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "dorian-all"
-  s.version = "0.1.4"
+  s.version = "0.2.0"
   s.summary = "Evaluates some code on all lines of the input"
   s.description =
     s.summary + "\n\n" +
@@ -11,4 +11,5 @@ Gem::Specification.new do |s|
   s.executables << "all"
   s.homepage = "https://github.com/dorianmariefr/all"
   s.license = "MIT"
+  s.metadata = { "rubygems_mfa_required" => "true" }
 end
