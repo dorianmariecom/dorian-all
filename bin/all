@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
 
-require 'dorian/all'
-Dorian::All.run
+if ARGV.size != 1 || ARGV.first == "--help" || ARGV.first == "-h"
+  abort "USAGE: ... | all CODE"
+end
+
+lines = STDIN.each_line.to_a.map(&:strip)
+eval(ARGV.first)
