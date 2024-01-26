@@ -4,5 +4,5 @@ if ARGV.size != 1 || ARGV.first == "--help" || ARGV.first == "-h"
   abort "USAGE: ... | all CODE"
 end
 
-lines = STDIN.each_line.to_a.map(&:strip)
+it = STDIN.each_line.to_a.map(&:strip)
 eval(ARGV.first)
