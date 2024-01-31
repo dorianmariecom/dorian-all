@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 if ARGV.size != 1 || ARGV.first == "--help" || ARGV.first == "-h"
   abort "USAGE: ... | all CODE"
 end
 
-it = STDIN.each_line.to_a.map(&:strip)
+$stdin.each_line.to_a.map(&:strip)
 eval(ARGV.first)
