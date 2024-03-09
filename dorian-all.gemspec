@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
       "\n\n" \
         'e.g. `ls -l | each "puts l.split[4]" | all "puts lines.map(&:to_i).sum"`'
   s.authors = ["Dorian Marié"]
-  s.email = "dorian@dorianmarie.fr"
+  s.email = "dorian@dorianmarie.com"
   s.files = ["bin/all"]
   s.executables << "all"
   s.homepage = "https://github.com/dorianmariecom/dorian-all"
