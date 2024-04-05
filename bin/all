@@ -2,7 +2,8 @@
 # frozen_string_literal: true
 
 if ARGV.size != 1 || ARGV.first == "--help" || ARGV.first == "-h"
-  abort "USAGE: ... | all CODE"
+  puts "USAGE: ... | all CODE"
+  exit
 end
 
 it = $stdin.each_line.to_a.map(&:strip)
