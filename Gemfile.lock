@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dorian-all (0.5.8)
+    dorian-all (0.6.0)
 
 GEM
   remote: https://rubygems.org/
