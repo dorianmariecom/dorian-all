@@ -15,6 +15,4 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/dorianmariecom/dorian-all"
   s.license = "MIT"
   s.metadata = { "rubygems_mfa_required" => "true" }
-
-  s.required_ruby_version = ">= 3.3.0"
 end
