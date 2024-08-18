@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "dorian-all"
-  s.version = "0.7.1"
+  s.version = "0.7.2"
   s.summary = "evaluates ruby code on all lines of the input"
   s.description = s.summary
   s.authors = ["Dorian Marié"]
