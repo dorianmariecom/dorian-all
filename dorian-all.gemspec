@@ -3,11 +3,8 @@
 Gem::Specification.new do |s|
   s.name = "dorian-all"
   s.version = "0.7.1"
-  s.summary = "Evaluates some code on all lines of the input"
-  s.description =
-    s.summary +
-      "\n\n" \
-        'e.g. `ls -l | each "puts l.split[4]" | all "puts lines.map(&:to_i).sum"`'
+  s.summary = "evaluates ruby code on all lines of the input"
+  s.description = s.summary
   s.authors = ["Dorian Marié"]
   s.email = "dorian@dorianmarie.com"
   s.files = ["bin/all"]
