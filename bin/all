@@ -1,10 +1,20 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-if ARGV.size != 1 || ARGV.first == "--help" || ARGV.first == "-h"
-  puts "USAGE: ... | all CODE"
-  exit
+require "dorian/arguments"
+
+parsed = Dorian::Arguments.parse(
+  version: { alias: :v },
+  help: { alias: :h }
+)
+
+abort parsed.help if parsed.options.help
+abort File.read(File.expand_path('../../VERSION', __FILE__)) if parsed.options.version
+
+if parsed.files.any?
+  it = parsed.files.map { |file| File.read(file) }.join
+else
+  it = $stdin.each_line.to_a.map(&:strip)
 end
 
-it = $stdin.each_line.to_a.map(&:strip)
-eval(ARGV.first)
+eval(parsed.arguments.join(" "))
