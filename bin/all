@@ -3,13 +3,12 @@
 
 require "dorian/arguments"
 
-parsed = Dorian::Arguments.parse(
-  version: { alias: :v },
-  help: { alias: :h }
-)
+parsed = Dorian::Arguments.parse(version: { alias: :v }, help: { alias: :h })
 
 abort parsed.help if parsed.options.help
-abort File.read(File.expand_path('../../VERSION', __FILE__)) if parsed.options.version
+if parsed.options.version
+  abort File.read(File.expand_path("../../VERSION", __FILE__))
+end
 
 if parsed.files.any?
   it = parsed.files.map { |file| File.read(file) }.join
