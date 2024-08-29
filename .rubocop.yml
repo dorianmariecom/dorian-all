@@ -32,6 +32,8 @@ Lint/ShadowingOuterLocalVariable:
   Enabled: false
 Lint/SuppressedException:
   Enabled: false
+Lint/UselessAssignment:
+  Enabled: false
 Metrics/AbcSize:
   Enabled: false
 Metrics/BlockLength:
@@ -114,5 +116,3 @@ require:
   - rubocop-rspec
   - rubocop-rspec_rails
   - rubocop-capybara
-Lint/UselessAssignment:
-  Enabled: false
