@@ -6,14 +6,16 @@ require "dorian/arguments"
 parsed = Dorian::Arguments.parse(version: { alias: :v }, help: { alias: :h })
 
 abort parsed.help if parsed.options.help
+
 if parsed.options.version
   abort File.read(File.expand_path("../VERSION", __dir__))
 end
 
-if parsed.files.any?
-  parsed.files.map { |file| File.read(file) }.join
-else
-  $stdin.each_line.to_a.map(&:strip)
-end
+it =
+  if parsed.files.any?
+    parsed.files.map { |file| File.read(file) }.join
+  else
+    $stdin.each_line.to_a.map(&:strip)
+  end
 
 eval(parsed.arguments.join(" "))
