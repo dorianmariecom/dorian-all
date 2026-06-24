@@ -1,28 +1,41 @@
 # `dorian-all`
 
-Evaluates some code on all lines of the input
+Run one Ruby snippet against the whole input.
 
-e.g. `ls -l | each "puts l.split[4]" | all "puts lines.map(&:to_i).sum"`
-
-### Install
+## Install
 
 ```bash
 gem install dorian-all
 ```
 
-Or as part of my other gems:
+Also included in the aggregate gem:
 
 ```bash
 gem install dorian
 ```
 
-### Usage
-
-From my history:
+## Usage
 
 ```bash
-pbpaste | all "puts lines.map(&:strip).join(', ')"
-printf 'Clément\nDorian\nMadiha\nRémi\nRayane\nMélanie\nJade' | all "puts lines.sample"
-pbpaste | grep '*' | each "puts '\"' + line.split[1] + '\"'" | all "puts lines.map(&:strip).join(', ')"
-cat a.txt | grep -v NEW | all "puts lines.map(&:strip).each_slice(2).map { |l| l.join(' '))"
+all [file ...] "ruby code"
+```
+
+Run `all -h` for generated option details and `all -v` for the installed version.
+
+## Notes
+
+- Sets both `it` and `lines` to the complete input. Stdin input is available as an array of stripped lines; file input is concatenated as a string.
+
+## Examples
+
+### Join all incoming lines
+
+```bash
+printf '1\n2\n3\n' | all "puts lines.join"
+```
+
+Output:
+
+```text
+123
 ```
